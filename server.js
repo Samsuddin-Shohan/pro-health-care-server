@@ -1,35 +1,53 @@
-const MongoClient = require('mongodb').MongoClient;
-require('dotenv').config();
+require('dotenv').config()
 const http = require('http')
-const express = require('express');
-const cors = require('cors');
-const mongodb = require('mongodb');
-const morgan = require('morgan');
-const PORT = process.env.PORT || 8000;
-
-const app = express();
-app.use([cors(),morgan('dev'),express.json(),express.urlencoded({extended:true})]);
-const server = http.createServer(app);
-
-const uri = `mongodb://localhost:27017/`;
-const client = new MongoClient(uri);
+const app = require('./app/app')
+const PORT = process.env.PORT || 8000
+const {
+  getServices,
+  getAppontments,
+  postAppointments,
+  postServices,
+} = require('./controller/mainController')
+const client = require('./db/db')
+const server = http.createServer(app)
 
 async function run() {
   try {
-    await client.connect();
-    console.log('database connected');
-    const database = client.db("online-store");
-    const productsCollection = database.collection("products");
-    
-   
+    await client.connect()
+    console.log('database connected')
+    const database = client.db('proHealthCare')
+    const servicesCollection = database.collection('services')
+    const appointmentsCollection = database.collection('appoinments')
+    app.get('/services', async (req, res) => {
+      const services = await servicesCollection.find({})
+      res.send(services)
+    })
+    app.post('/services', async (req, res) => {
+      const { title, description, image } = req.body
+      const result = await servicesCollection.insertOne({
+        title,
+        description,
+        image,
+      })
+      res.send(result)
+    })
+    app.get('/appointments', async (req, res) => {
+      const appoinments = await appointmentsCollection.find({})
+    })
+    app.post('/appointments', async (req, res) => {
+      const { name, email, cell } = req.body
+      const result = await appointmentsCollection.insertOne({
+        name,
+        email,
+        cell,
+      })
+    })
   } finally {
     // await client.close();
   }
 }
-run().catch(console.dir);
+run().catch(console.dir)
 
-
-server.listen(PORT,()=>{
-    console.log(`listening on port ${PORT}`);
+server.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`)
 })
-
