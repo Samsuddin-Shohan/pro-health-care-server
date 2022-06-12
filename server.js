@@ -18,6 +18,16 @@ async function run() {
     const database = client.db('proHealthCare')
     const servicesCollection = database.collection('services')
     const appointmentsCollection = database.collection('appoinments')
+    const userCollections = database.collection('users')
+    app.post('/users', async (req, res) => {
+      const { name, email, password } = req.body
+      const result = await userCollections.insertOne({
+        name,
+        email,
+        password,
+      })
+      res.send(result)
+    })
     app.get('/services', async (req, res) => {
       const cursors = await servicesCollection.find({})
       const services = await cursors.toArray()
@@ -33,7 +43,9 @@ async function run() {
       res.send(result)
     })
     app.get('/appointments', async (req, res) => {
-      const appoinments = await appointmentsCollection.find({})
+      const cursors = await appointmentsCollection.find({})
+      const appoinments = await cursors.toArray()
+      res.json(appoinments)
     })
     app.post('/appointments', async (req, res) => {
       const { name, email, cell, problem } = req.body
