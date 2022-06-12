@@ -1,20 +1,14 @@
-const getServices = (req,res,next)=>{
-
+const getServices = (req, res, next) => {}
+const postServices = (req, res, next) => {
+  const { title, description, image } = req.body
 }
-const postServices = (req,res,next)=>{
+const getAppontments = (req, res, next) => {}
 
-}
-const getAppontments = (req,res,next)=>{
-
-}
-
-const postAppointments = (req,res,next)=>{
-
-}
+const postAppointments = (req, res, next) => {}
 
 module.exports = {
-    getServices,
-    postServices,
-    getAppontments,
-    postAppointments
-};
+  getServices,
+  postServices,
+  getAppontments,
+  postAppointments,
+}

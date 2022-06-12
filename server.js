@@ -19,7 +19,8 @@ async function run() {
     const servicesCollection = database.collection('services')
     const appointmentsCollection = database.collection('appoinments')
     app.get('/services', async (req, res) => {
-      const services = await servicesCollection.find({})
+      const cursors = await servicesCollection.find({})
+      const services = await cursors.toArray()
       res.send(services)
     })
     app.post('/services', async (req, res) => {
@@ -35,12 +36,14 @@ async function run() {
       const appoinments = await appointmentsCollection.find({})
     })
     app.post('/appointments', async (req, res) => {
-      const { name, email, cell } = req.body
+      const { name, email, cell, problem } = req.body
       const result = await appointmentsCollection.insertOne({
         name,
         email,
         cell,
+        problem,
       })
+      res.send(result)
     })
   } finally {
     // await client.close();
