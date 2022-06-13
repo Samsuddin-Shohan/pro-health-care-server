@@ -23,6 +23,9 @@ async function run() {
     app.get('/', (req, res) => {
       res.send('hello,application is running')
     })
+    app.get('/hello', (req, res) => {
+      res.send('hello,application is running')
+    })
     app.get('/user/:email', async (req, res) => {
       const email = req.params.email
       console.log(email)
