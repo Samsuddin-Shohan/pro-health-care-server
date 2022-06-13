@@ -1,7 +1,7 @@
 require('dotenv').config()
 const http = require('http')
 const app = require('./app/app')
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 7000
 const {
   getServices,
   getAppontments,
@@ -20,6 +20,9 @@ async function run() {
     const appointmentsCollection = database.collection('appoinments')
     const userCollections = database.collection('users')
     const doctorCollection = database.collection('doctors')
+    app.get('/', (req, res) => {
+      console.log('application is running')
+    })
     app.get('/user/:email', async (req, res) => {
       const email = req.params.email
       console.log(email)
