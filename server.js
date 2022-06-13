@@ -19,6 +19,14 @@ async function run() {
     const servicesCollection = database.collection('services')
     const appointmentsCollection = database.collection('appoinments')
     const userCollections = database.collection('users')
+    const doctorCollection = database.collection('doctors')
+    app.get('/user/:email', async (req, res) => {
+      const email = req.params.email
+      console.log(email)
+      const user = await userCollections.findOne({ email: email })
+      console.log(user)
+      res.json(user)
+    })
     app.post('/users', async (req, res) => {
       const { name, email, password } = req.body
       const result = await userCollections.insertOne({
@@ -39,6 +47,21 @@ async function run() {
         title,
         description,
         image,
+      })
+      res.send(result)
+    })
+    app.get('/doctors', async (req, res) => {
+      const cursors = await doctorCollection.find({})
+      const doctors = await cursors.toArray()
+      res.send(doctors)
+    })
+    app.post('/doctors', async (req, res) => {
+      const { name, title, description, image } = req.body
+      const result = await doctorCollection.insertOne({
+        title,
+        description,
+        image,
+        name,
       })
       res.send(result)
     })
