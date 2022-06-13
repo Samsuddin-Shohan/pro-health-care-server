@@ -21,7 +21,7 @@ async function run() {
     const userCollections = database.collection('users')
     const doctorCollection = database.collection('doctors')
     app.get('/', (req, res) => {
-      console.log('application is running')
+      res.send('hello,application is running')
     })
     app.get('/user/:email', async (req, res) => {
       const email = req.params.email
