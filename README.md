@@ -17,6 +17,7 @@
 3. There is an admin login system (username: admin password: 123)
 4. Admin can see all the appointments submitted by user
 5. Admin can add new services & new doctors.
+6. User can see how many appointments he has & details.
 
 <a href="https://ibb.co/0c2RqDy"><img src="https://i.ibb.co/Cz83B1K/Screenshot-from-2022-06-14-12-55-55.png" alt="Screenshot-from-2022-06-14-12-55-55" border="0"></a>
 <a href="https://ibb.co/7bWDXDL"><img src="https://i.ibb.co/3kNb7bQ/Screenshot-from-2022-06-14-12-56-02.png" alt="Screenshot-from-2022-06-14-12-56-02" border="0"></a>
@@ -29,3 +30,4 @@
 <a href="https://ibb.co/hBzfVWX"><img src="https://i.ibb.co/n7JCjc3/Screenshot-from-2022-06-14-12-57-43.png" alt="Screenshot-from-2022-06-14-12-57-43" border="0"></a>
 <a href="https://ibb.co/r5G3pBp"><img src="https://i.ibb.co/TPB10Q0/Screenshot-from-2022-06-14-12-57-44.png" alt="Screenshot-from-2022-06-14-12-57-44" border="0"></a>
 <a href="https://ibb.co/gVLxWq6"><img src="https://i.ibb.co/0tRx94Q/Screenshot-from-2022-06-14-12-58-02.png" alt="Screenshot-from-2022-06-14-12-58-02" border="0"></a>
+<a href="https://ibb.co/X35h43V"><img src="https://i.ibb.co/fnNhSnQ/Screenshot-from-2022-06-15-20-13-03.png" alt="Screenshot-from-2022-06-15-20-13-03" border="0"></a>
