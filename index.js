@@ -76,6 +76,15 @@ async function run() {
       const appoinments = await cursors.toArray()
       res.json(appoinments)
     })
+    app.get('/appointments/:username', async (req, res) => {
+      const username = req.params.username
+      const qurey = {
+        name: username,
+      }
+      const cursors = await appointmentsCollection.find(qurey)
+      const appoinments = await cursors.toArray()
+      res.json(appoinments)
+    })
     app.post('/appointments', async (req, res) => {
       const { name, email, cell, problem } = req.body
       const result = await appointmentsCollection.insertOne({
