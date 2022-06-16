@@ -18,7 +18,11 @@
 4. Admin can see all the appointments submitted by user
 5. Admin can add new services & new doctors.
 6. User can see how many appointments he has & details.
+7. User can see his status(accepted,rejected,pending)
+8. Admin can change the status of appointment.
 
+<a href="https://ibb.co/pRjxM6y"><img src="https://i.ibb.co/RBT9sGy/Screenshot-from-2022-06-16-18-45-36.png" alt="Screenshot-from-2022-06-16-18-45-36" border="0"></a>
+<a href="https://ibb.co/CJfY0FP"><img src="https://i.ibb.co/3fnjhHR/Screenshot-from-2022-06-16-18-46-00.png" alt="Screenshot-from-2022-06-16-18-46-00" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>how to post a gif on tumblr app</a><br />
 <a href="https://ibb.co/0c2RqDy"><img src="https://i.ibb.co/Cz83B1K/Screenshot-from-2022-06-14-12-55-55.png" alt="Screenshot-from-2022-06-14-12-55-55" border="0"></a>
 <a href="https://ibb.co/7bWDXDL"><img src="https://i.ibb.co/3kNb7bQ/Screenshot-from-2022-06-14-12-56-02.png" alt="Screenshot-from-2022-06-14-12-56-02" border="0"></a>
 <a href="https://ibb.co/chqZ7Vg"><img src="https://i.ibb.co/whtPxj0/Screenshot-from-2022-06-14-12-56-05.png" alt="Screenshot-from-2022-06-14-12-56-05" border="0"></a>
