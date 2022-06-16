@@ -1,5 +1,6 @@
 require('dotenv').config()
 const http = require('http')
+const { ObjectId } = require('mongodb')
 const app = require('./app/app')
 const PORT = process.env.PORT || 8000
 const {
@@ -87,12 +88,31 @@ async function run() {
     })
     app.post('/appointments', async (req, res) => {
       const { name, email, cell, problem } = req.body
+      const status = 'pending'
       const result = await appointmentsCollection.insertOne({
         name,
         email,
         cell,
         problem,
+        status,
       })
+      res.send(result)
+    })
+    app.post('/status', async (req, res) => {
+      const id = req.query.id
+      const status = req.query.status
+      const _id = ObjectId(id)
+      const filter = { _id: _id }
+
+      // this option instructs the method to create a document if no documents match the filter
+      const options = { upsert: true }
+      // create a document that sets the plot of the movie
+      const updateDoc = {
+        $set: {
+          status: status,
+        },
+      }
+      const result = await movies.updateOne(filter, updateDoc, options)
       res.send(result)
     })
   } finally {
