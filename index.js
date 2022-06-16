@@ -112,7 +112,11 @@ async function run() {
           status: status,
         },
       }
-      const result = await movies.updateOne(filter, updateDoc, options)
+      const result = await appointmentsCollection.updateOne(
+        filter,
+        updateDoc,
+        options
+      )
       res.send(result)
     })
   } finally {
