@@ -98,7 +98,7 @@ async function run() {
       })
       res.send(result)
     })
-    app.post('/status', async (req, res) => {
+    app.put('/status', async (req, res) => {
       const id = req.query.id
       const status = req.query.status
       const _id = ObjectId(id)
